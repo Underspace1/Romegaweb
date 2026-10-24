@@ -1,5 +1,5 @@
 // Dépôt GitHub de Romega : change cette ligne si le dépôt est déplacé.
-const REPO = "Underspace1/Romega";
+const REPO = "Underspace1/Romegaweb";
 const RELEASES_URL = `https://github.com/${REPO}/releases/latest`;
 
 // Par défaut, tous les boutons mènent à la page de la dernière version.
