@@ -1,0 +1,198 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Romega — le launcher Roblox qui va plus loin</title>
+  <meta name="description" content="Romega est un launcher Roblox gratuit et libre pour Windows et Linux : lancement direct, choix de la région du serveur sur un globe 3D, avatar, 188 options, FPS illimités, thèmes et Discord Rich Presence.">
+  <meta name="theme-color" content="#0B0C10">
+  <meta property="og:title" content="Romega — le launcher Roblox qui va plus loin">
+  <meta property="og:description" content="Lancement direct, globe des serveurs, 188 options, FPS illimités. Gratuit et libre.">
+  <meta property="og:image" content="assets/accueil.jpg">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="icon" href="assets/favicon.png" type="image/png">
+  <link rel="preload" href="fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <a class="skip" href="#main">Aller au contenu</a>
+
+  <header class="top">
+    <a class="brand" href="#" aria-label="Romega, accueil">
+      <img src="assets/logo.svg" alt="" width="32" height="32">
+      <span>ROMEGA</span>
+    </a>
+    <nav class="nav" aria-label="Navigation principale">
+      <a href="#showcase">Découvrir</a>
+      <a href="#fonctionnalites">Fonctionnalités</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <a class="btn btn-sm" data-dl="windows" href="#telecharger">Télécharger</a>
+  </header>
+
+  <main id="main">
+    <!-- HERO -->
+    <section class="hero">
+      <p class="kicker reveal">Launcher Roblox · Windows &amp; Linux · Gratuit</p>
+      <h1 class="hero-title" aria-label="Ton Roblox. Tes règles.">
+        <span class="line"><span>TON ROBLOX.</span></span>
+        <span class="line"><span class="accent">TES RÈGLES.</span></span>
+      </h1>
+      <p class="lead reveal">Lance tes jeux en un clic, choisis ton serveur sur un globe, règle 188 options et débloque tes FPS. Tout dans une seule app.</p>
+      <div class="cta reveal" id="telecharger">
+        <a class="btn btn-lg" data-dl="windows" href="#">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.5 10 4.5v7H3zM11 4.4 21 3v8.5H11zM3 12.5h7v7L3 18.5zM11 12.5h10V21l-10-1.4z"/></svg>
+          Télécharger pour Windows
+        </a>
+        <div class="alt-dl">
+          <span>Linux :</span>
+          <a data-dl="deb" href="#">.deb</a>
+          <a data-dl="appimage" href="#">.AppImage</a>
+        </div>
+      </div>
+      <figure class="hero-shot reveal">
+        <img src="assets/accueil.jpg" alt="Accueil de Romega : profil, événement d’Halloween et amis en ligne" width="1280" height="800">
+      </figure>
+    </section>
+
+    <!-- BANDEAU -->
+    <div class="marquee marquee-blue" aria-hidden="true">
+      <div class="track">
+        <span>JOUE EN UN CLIC ✦ CHOISIS TA RÉGION ✦ 188 OPTIONS ✦ FPS DÉBLOQUÉS ✦ CHANGE DE TENUE ✦&nbsp;</span>
+        <span>JOUE EN UN CLIC ✦ CHOISIS TA RÉGION ✦ 188 OPTIONS ✦ FPS DÉBLOQUÉS ✦ CHANGE DE TENUE ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- SHOWCASES -->
+    <section id="showcase" class="showcases" aria-label="Découvrir Romega">
+      <article class="show">
+        <div class="show-text">
+          <span class="num">01</span>
+          <h2 class="big"><span class="line"><span>CHOISIS</span></span><span class="line"><span>TA RÉGION.</span></span></h2>
+          <p>Fais tourner le globe 3D, clique sur une ville et rejoins un serveur proche de chez toi. Moins de ping, plus de parties.</p>
+        </div>
+        <figure class="show-img"><img src="assets/globe.jpg" alt="Globe 3D de sélection de la région du serveur" loading="lazy" width="1280" height="800"></figure>
+      </article>
+
+      <article class="show flip">
+        <div class="show-text">
+          <span class="num">02</span>
+          <h2 class="big"><span class="line"><span>CHANGE</span></span><span class="line"><span>DE TÊTE.</span></span></h2>
+          <p>Tes tenues en un clic, R6 ou R15, et le changeur qui t’habille différemment à chaque partie.</p>
+        </div>
+        <figure class="show-img"><img src="assets/avatar.jpg" alt="Page Avatar avec le rendu du personnage et les tenues enregistrées" loading="lazy" width="1280" height="800"></figure>
+      </article>
+
+      <article class="show">
+        <div class="show-text">
+          <span class="num">03</span>
+          <h2 class="big"><span class="line"><span>188</span></span><span class="line"><span>OPTIONS.</span></span></h2>
+          <p>Favoris de jeux, meilleure liste de serveurs, amis en commun… Active ce que tu veux pour roblox.com, directement depuis l’app.</p>
+        </div>
+        <figure class="show-img"><img src="assets/fonctionnalites.jpg" alt="Page Fonctionnalités avec des interrupteurs par option" loading="lazy" width="1280" height="800"></figure>
+      </article>
+
+      <article class="show flip">
+        <div class="show-text">
+          <span class="num">04</span>
+          <h2 class="big"><span class="line"><span>FPS</span></span><span class="line"><span>SANS LIMITE.</span></span></h2>
+          <p>Profils Performance, Équilibré, Qualité ou Économie. Limite de FPS, API graphique, éclairage : appliqué à chaque lancement.</p>
+        </div>
+        <figure class="show-img"><img src="assets/optimisation.jpg" alt="Page Optimisation avec la limite de FPS réglée à 144" loading="lazy" width="1280" height="800"></figure>
+      </article>
+
+      <article class="show">
+        <div class="show-text">
+          <span class="num">05</span>
+          <h2 class="big"><span class="line"><span>JOUE EN</span></span><span class="line"><span>UN CLIC.</span></span></h2>
+          <p>Lance un jeu directement depuis l’app, rejoins un ami en cours de partie ou vise le meilleur ping.</p>
+        </div>
+        <figure class="show-img"><img src="assets/jeu.jpg" alt="Page d’un jeu avec le bouton Jouer, les options de serveur et un ami en partie" loading="lazy" width="1280" height="800"></figure>
+      </article>
+
+      <article class="show flip">
+        <div class="show-text">
+          <span class="num">06</span>
+          <h2 class="big"><span class="line"><span>À TON</span></span><span class="line"><span>STYLE.</span></span></h2>
+          <p>Classique par défaut, ou un des thèmes en verre dépoli : Aurore, Néon, Océan, Sakura… avec ta couleur d’accent.</p>
+        </div>
+        <figure class="show-img"><img src="assets/themes.jpg" alt="Choix du thème : Classique, Romega, Aurore, Néon…" loading="lazy" width="1280" height="800"></figure>
+      </article>
+    </section>
+
+    <div class="marquee marquee-light" aria-hidden="true">
+      <div class="track reverse">
+        <span>GRATUIT ✦ OPEN SOURCE ✦ SANS PUB ✦ WINDOWS &amp; LINUX ✦&nbsp;</span>
+        <span>GRATUIT ✦ OPEN SOURCE ✦ SANS PUB ✦ WINDOWS &amp; LINUX ✦&nbsp;</span>
+      </div>
+    </div>
+
+    <!-- LISTE -->
+    <section id="fonctionnalites" class="features">
+      <h2 class="section-title reveal">TOUT CE QU’IL Y A <span class="accent">DEDANS.</span></h2>
+      <ul class="feature-list">
+        <li class="reveal"><h3>Lancement direct</h3><p>Rejoins un jeu depuis l’app, sans passer par le navigateur.</p></li>
+        <li class="reveal"><h3>Globe des serveurs</h3><p>Choisis la région de ton serveur sur un globe 3D interactif.</p></li>
+        <li class="reveal"><h3>Avatar</h3><p>Tenues, R6/R15 et changeur de tenue à chaque partie.</p></li>
+        <li class="reveal"><h3>Profil enrichi</h3><p>Plus d’infos sur ton profil et celui de tes amis.</p></li>
+        <li class="reveal"><h3>188 options</h3><p>Des améliorations pour roblox.com, réglables depuis l’app.</p></li>
+        <li class="reveal"><h3>Optimisation</h3><p>FPS débloqués, FastFlags et profils prêts à l’emploi.</p></li>
+        <li class="reveal"><h3>Événements</h3><p>Les annonces et événements du moment, dès l’accueil.</p></li>
+        <li class="reveal"><h3>Thèmes</h3><p>Classique ou verre dépoli, avec ta couleur d’accent.</p></li>
+        <li class="reveal"><h3>Discord</h3><p>Rich Presence : tes amis voient à quoi tu joues et te rejoignent.</p></li>
+        <li class="reveal"><h3>Historique</h3><p>Retrouve tous les jeux auxquels tu as joué.</p></li>
+        <li class="reveal"><h3>Windows &amp; Linux</h3><p>Installateur Windows, paquets .deb et AppImage (via Sober).</p></li>
+        <li class="reveal"><h3>Libre</h3><p>Code source ouvert sous licence GPL-3.0.</p></li>
+      </ul>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq" class="faq">
+      <h2 class="section-title reveal">QUESTIONS<span class="accent">?</span></h2>
+      <div class="faq-list">
+        <details>
+          <summary>Romega est-il gratuit ?</summary>
+          <p>Oui, totalement. Romega est un logiciel libre sous licence GPL-3.0 : pas de pub, pas d’abonnement, pas de tracking.</p>
+        </details>
+        <details>
+          <summary>Est-ce que mon compte est en sécurité ?</summary>
+          <p>Tu te connectes sur la page officielle de roblox.com, dans une fenêtre de l’application. Ton mot de passe est saisi directement chez Roblox.</p>
+        </details>
+        <details>
+          <summary>Romega modifie-t-il le jeu ?</summary>
+          <p>Non. Romega lance le client Roblox officiel et applique uniquement des réglages de configuration (FPS, graphismes). Rien n’est injecté dans le jeu.</p>
+        </details>
+        <details>
+          <summary>Windows affiche un avertissement à l’installation, c’est normal ?</summary>
+          <p>Oui, Windows SmartScreen prévient pour les applications encore peu téléchargées. Clique sur « Informations complémentaires » puis « Exécuter quand même ».</p>
+        </details>
+        <details>
+          <summary>Ça marche sous Linux ?</summary>
+          <p>Oui. Installe le paquet .deb ou l’AppImage : Romega lance Roblox via Sober.</p>
+        </details>
+        <details>
+          <summary>Romega est-il lié à Roblox ?</summary>
+          <p>Non. Romega est un projet indépendant, il n’est ni affilié, ni approuvé par Roblox Corporation.</p>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="final">
+      <h2 class="mega" aria-label="Prêt ?"><span class="line"><span>PRÊT<span class="accent">?</span></span></span></h2>
+      <a class="btn btn-lg btn-invert reveal" data-dl="windows" href="#">Télécharger Romega</a>
+    </section>
+  </main>
+
+  <footer class="foot">
+    <div class="brand">
+      <img src="assets/logo.svg" alt="" width="28" height="28">
+      <span>ROMEGA</span>
+    </div>
+    <p>Logiciel libre sous licence <a href="https://www.gnu.org/licenses/gpl-3.0.fr.html">GPL-3.0</a> · <a data-dl="source" href="#">Code source</a> · <a href="confidentialite">Confidentialité</a> · <a href="conditions-utilisation">Conditions d’utilisation</a></p>
+    <p class="muted">Romega n’est pas affilié à Roblox Corporation. Roblox est une marque de Roblox Corporation.</p>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>

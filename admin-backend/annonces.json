@@ -1,0 +1,14 @@
+[
+  {
+    "id": "bienvenue-romega",
+    "badge": "Bienvenue",
+    "emoji": "✦",
+    "title": "Bienvenue sur Romega",
+    "text": "Ton launcher Roblox évolue : retrouve ici les nouveautés, événements et annonces de l’équipe Romega.",
+    "colors": ["#335FFF", "#8B5CF6", "#0B0B1E"],
+    "start": "2026-10-24",
+    "end": "2027-12-31",
+    "route": "discover",
+    "cta": "Découvrir les jeux"
+  }
+]

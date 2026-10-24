@@ -1,0 +1,38 @@
+# Dependencies and build outputs
+node_modules/
+target/
+launcher/dist/
+extension/node_modules/
+
+# Local configuration and secrets
+.env
+.env.*
+!.env.example
+*.local
+*.pem
+*.key
+
+# Données locales Romega — ne jamais publier les sessions
+session.json
+oauth.json
+tokens.json
+settings.json
+*.cookies
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Logs and operating-system files
+*.log
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/*
+!.vscode/extensions.json
+.idea/
+
+# Local previews and deliverable archives
+*-preview.png
+*.zip

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Administration — Romega</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="referrer" content="no-referrer">
+  <meta name="theme-color" content="#0B0C10">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; font-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'self'">
+  <link rel="icon" href="assets/logo.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="admin.css">
+  <script src="admin.js" defer></script>
+</head>
+<body>
+  <header class="admin-top">
+    <a class="admin-brand" href="/" aria-label="Retour au site Romega">
+      <img src="assets/logo.svg" alt="" width="34" height="34">
+      <span>ROMEGA</span>
+    </a>
+    <span class="admin-label">ADMINISTRATION</span>
+    <button id="logout-button" class="button button-ghost top-logout is-hidden" type="button">Se déconnecter</button>
+  </header>
+
+  <main>
+    <section id="boot-screen" class="centered-screen" aria-live="polite">
+      <div class="loader" aria-hidden="true"></div>
+      <p>Vérification de la session…</p>
+    </section>
+
+    <section id="login-screen" class="login-screen is-hidden">
+      <div class="login-card">
+        <p class="eyebrow">ESPACE PRIVÉ</p>
+        <h1>CONTENT DE<br><span>TE REVOIR.</span></h1>
+        <p class="login-intro">Connecte-toi pour gérer les annonces affichées dans le launcher Romega.</p>
+        <form id="login-form">
+          <label for="password">Mot de passe administrateur</label>
+          <input id="password" name="password" type="password" autocomplete="current-password" required autofocus maxlength="256" placeholder="Ton mot de passe">
+          <p id="login-error" class="message message-error" role="alert"></p>
+          <button id="login-button" class="button button-primary button-wide" type="submit">Accéder au tableau de bord</button>
+        </form>
+        <p class="security-note"><span aria-hidden="true">●</span> Connexion chiffrée · session privée de 12 h</p>
+      </div>
+      <div class="login-decoration" aria-hidden="true">
+        <span>TES ANNONCES.</span>
+        <span>TON LAUNCHER.</span>
+      </div>
+    </section>
+
+    <section id="dashboard" class="dashboard is-hidden">
+      <div class="dashboard-heading">
+        <div>
+          <p class="eyebrow">CONTENU DU LAUNCHER</p>
+          <h1>ANNONCES<span>.</span></h1>
+          <p>Crée, modifie et publie les cartes visibles sur l’accueil de Romega.</p>
+        </div>
+        <div class="heading-actions">
+          <span id="save-state" class="save-state">Toutes les modifications sont enregistrées</span>
+          <button id="save-button" class="button button-primary" type="button" disabled>Publier les modifications</button>
+        </div>
+      </div>
+
+      <p id="dashboard-message" class="message dashboard-message" role="status" aria-live="polite"></p>
+
+      <div class="workspace">
+        <aside class="announcements-panel" aria-label="Liste des annonces">
+          <div class="panel-heading">
+            <h2>Mes annonces <span id="announcement-count">0</span></h2>
+            <button id="add-button" class="icon-button" type="button" title="Ajouter une annonce" aria-label="Ajouter une annonce">+</button>
+          </div>
+          <div id="announcements-list" class="announcements-list"></div>
+          <div class="panel-tip">
+            <strong>Publication instantanée</strong>
+            <p>Après l’enregistrement, les launchers récupèrent la nouvelle version à leur prochaine ouverture.</p>
+          </div>
+        </aside>
+
+        <section id="editor-panel" class="editor-panel" aria-label="Modifier l’annonce">
+          <form id="announcement-form">
+            <div class="editor-heading">
+              <div>
+                <p class="eyebrow">CARTE D’ANNONCE</p>
+                <h2 id="editor-title">Nouvelle annonce</h2>
+              </div>
+              <button id="delete-button" class="button button-danger" type="button">Supprimer</button>
+            </div>
+
+            <div class="form-grid">
+              <div class="field field-full">
+                <label for="title">Titre <span>obligatoire</span></label>
+                <input id="title" name="title" type="text" required maxlength="120" placeholder="Une nouveauté dans Romega">
+              </div>
+              <div class="field">
+                <label for="badge">Petit libellé</label>
+                <input id="badge" name="badge" type="text" maxlength="60" placeholder="Nouveau dans Romega">
+              </div>
+              <div class="field">
+                <label for="emoji">Émoji</label>
+                <input id="emoji" name="emoji" type="text" maxlength="16" placeholder="✦">
+              </div>
+              <div class="field field-full">
+                <label for="text">Description</label>
+                <textarea id="text" name="text" rows="4" maxlength="1200" placeholder="Explique l’annonce en quelques mots…"></textarea>
+                <small><span id="text-count">0</span> / 1200 caractères</small>
+              </div>
+              <div class="field">
+                <label for="start">Date de début</label>
+                <input id="start" name="start" type="text" inputmode="numeric" placeholder="2026-10-24 ou 10-24">
+                <small>AAAA-MM-JJ, ou MM-JJ chaque année</small>
+              </div>
+              <div class="field">
+                <label for="end">Date de fin</label>
+                <input id="end" name="end" type="text" inputmode="numeric" placeholder="2026-12-31 ou 12-31">
+                <small>Laisse vide pour ne pas la masquer</small>
+              </div>
+              <div class="field field-full">
+                <label for="id">Identifiant unique <span>obligatoire</span></label>
+                <input id="id" name="id" type="text" required maxlength="64" pattern="[A-Za-z0-9._-]+" placeholder="nouveaute-romega">
+                <small>Lettres, chiffres, points, tirets et underscores uniquement. Ne le change plus après publication.</small>
+              </div>
+            </div>
+
+            <fieldset class="colors-fieldset">
+              <legend>Couleurs du dégradé</legend>
+              <div class="color-fields">
+                <label><input id="color-1" type="color" value="#335FFF"><span>Début</span></label>
+                <label><input id="color-2" type="color" value="#8B5CF6"><span>Milieu</span></label>
+                <label><input id="color-3" type="color" value="#0B0B1E"><span>Fond</span></label>
+                <div id="color-preview" class="color-preview" aria-label="Aperçu du dégradé"></div>
+              </div>
+            </fieldset>
+
+            <fieldset class="action-fieldset">
+              <legend>Action du bouton <span>facultatif</span></legend>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="cta">Texte du bouton</label>
+                  <input id="cta" name="cta" type="text" maxlength="80" placeholder="Découvrir">
+                </div>
+                <div class="field">
+                  <label for="action-type">Destination</label>
+                  <select id="action-type" name="actionType">
+                    <option value="">Aucun bouton</option>
+                    <option value="route">Page de Romega</option>
+                    <option value="query">Recherche de jeux</option>
+                    <option value="placeId">Jeu Roblox précis</option>
+                    <option value="url">Lien Roblox</option>
+                  </select>
+                </div>
+                <div id="route-field" class="field field-full is-hidden">
+                  <label for="route">Page Romega</label>
+                  <select id="route" name="route">
+                    <option value="home">Accueil</option>
+                    <option value="discover">Découvrir</option>
+                    <option value="friends">Amis</option>
+                    <option value="history">Historique</option>
+                    <option value="settings">Paramètres</option>
+                    <option value="account">Compte</option>
+                    <option value="avatar">Avatar</option>
+                  </select>
+                </div>
+                <div id="action-value-field" class="field field-full is-hidden">
+                  <label id="action-value-label" for="action-value">Valeur</label>
+                  <input id="action-value" name="actionValue" type="text" maxlength="500">
+                  <small id="action-value-help"></small>
+                </div>
+              </div>
+            </fieldset>
+          </form>
+        </section>
+
+        <section id="empty-editor" class="empty-editor is-hidden">
+          <span aria-hidden="true">✦</span>
+          <h2>Aucune annonce</h2>
+          <p>Ajoute une première carte pour la faire apparaître dans le launcher.</p>
+          <button id="empty-add-button" class="button button-primary" type="button">Créer une annonce</button>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="admin-footer">
+    <span>ROMEGA · ESPACE ADMINISTRATEUR</span>
+    <a href="/annonces.json" target="_blank" rel="noopener noreferrer">Voir le flux public JSON</a>
+  </footer>
+</body>
+</html>

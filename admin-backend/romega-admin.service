@@ -1,0 +1,25 @@
+[Unit]
+Description=Romega secure announcements administration
+After=network.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/romega-admin
+EnvironmentFile=/etc/romega-admin.env
+ExecStart=/usr/bin/python3 /opt/romega-admin/admin_server.py
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ProtectKernelTunables=true
+ProtectKernelModules=true
+ProtectControlGroups=true
+RestrictSUIDSGID=true
+ReadWritePaths=/var/www/romega.online/data
+
+[Install]
+WantedBy=multi-user.target
